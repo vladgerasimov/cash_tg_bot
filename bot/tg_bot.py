@@ -57,7 +57,7 @@ def get_locations(msg):
 def add_location(msg):
     user_id = msg.from_user.id
     logger.info(f"add location message received from {user_id=}")
-    bot.send_message(chat_id=msg.chat_id, text="Choose new location name")
+    bot.send_message(chat_id=msg.chat.id, text="Choose new location name")
     bot.register_next_step_handler_by_chat_id(chat_id=msg.chat.id, callback=add_location_callback)
     ...
 
@@ -66,7 +66,7 @@ def add_location(msg):
 def add_cash(msg):
     user_id = msg.from_user.id
     logger.info(f"add cash message received from {user_id=}")
-    bot.send_message(chat_id=msg.chat_id, text="Choose location to add cash to")
+    bot.send_message(chat_id=msg.chat.id, text="Choose location to add cash to")
     bot.register_next_step_handler_by_chat_id(chat_id=msg.chat.id, callback=add_cash_callback)
     ...
 
@@ -75,6 +75,6 @@ def add_cash(msg):
 def withdraw_cash(msg):
     user_id = msg.from_user.id
     logger.info(f"withdraw location message received from {user_id=}")
-    bot.send_message(chat_id=msg.chat_id, text="Choose location to withdraw cash from")
+    bot.send_message(chat_id=msg.chat.id, text="Choose location to withdraw cash from")
     bot.register_next_step_handler_by_chat_id(chat_id=msg.chat.id, callback=withdraw_cash_callback)
     ...
