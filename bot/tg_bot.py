@@ -4,8 +4,10 @@ from telebot import types, TeleBot
 from loguru import logger
 
 from core.settings import bot_settings
+from db import create_tables, get_engine
 
-
+engine = get_engine()
+create_tables(engine)
 bot = TeleBot(bot_settings.bot_token)
 
 

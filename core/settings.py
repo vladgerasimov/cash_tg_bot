@@ -11,7 +11,9 @@ root_dir = Path.cwd()
 
 class BotSettings(BaseSettings):
     bot_token: str = ""
+    db_url: str = ""
     menu_buttons: list[str] = []
+    tables: list[str]
 
     @classmethod
     def from_yaml(cls, yaml_path: str | Path):
