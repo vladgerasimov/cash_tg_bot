@@ -3,3 +3,8 @@ menu_buttons:
   - Add location
   - Add cash
   - Withdraw cash
+tables:
+  - users
+  - locations
+  - money
+  - actions
