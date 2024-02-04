@@ -5,9 +5,8 @@ from core.settings import bot_settings
 
 create_users = """
 CREATE TABLE users (
-    id INT GENERATED ALWAYS AS IDENTITY,
-    nickname TEXT NOT NULL,
-    last_name TEXT NOT NULL,
+    id INT NOT NULL,
+    nickname TEXT,
     PRIMARY KEY (id)
 );
 """
