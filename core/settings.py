@@ -11,6 +11,7 @@ root_dir = Path.cwd()
 
 class BotSettings(BaseSettings):
     bot_token: str = ""
+    db_url: str = ""
     menu_buttons: list[str] = []
 
     @classmethod
