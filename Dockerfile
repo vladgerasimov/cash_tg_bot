@@ -4,6 +4,7 @@ RUN pip install poetry
 WORKDIR ./app
 
 COPY bot/ ./bot/
+COPy db/ ./db/
 COPY configs/ ./configs/
 COPY core/ ./core/
 COPY main.py ./main.py

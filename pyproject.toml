@@ -13,6 +13,8 @@ loguru = "^0.7.2"
 pydantic-settings = "^2.1.0"
 pyyaml = "^6.0.1"
 python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.25"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]
