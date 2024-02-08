@@ -7,6 +7,7 @@ create_users = """
 CREATE TABLE users (
     id INT NOT NULL,
     nickname TEXT,
+    UNIQUE (id)
     PRIMARY KEY (id)
 );
 """
@@ -16,6 +17,7 @@ CREATE TABLE locations (
     id INT GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL,
     name TEXT NOT NULL,
+    UNIQUE (user_id, name),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -27,6 +29,7 @@ CREATE TABLE money (
     user_id INT NOT NULL,
     location_id INT NOT NULL,
     amount INT NOT NULL,
+    UNIQUE (user_id, location_id),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (location_id) REFERENCES locations(id)
@@ -40,7 +43,7 @@ CREATE TABLE actions (
     location_id INT NOT NULL,
     change INT NOT NULL,
     new_amount INT NOT NULL,
-    datetime timestamp NOT NULL,
+    dt_timestamp timestamp NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (location_id) REFERENCES locations(id)
