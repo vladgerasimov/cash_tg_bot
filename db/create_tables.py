@@ -7,7 +7,7 @@ create_users = """
 CREATE TABLE users (
     id INT NOT NULL,
     nickname TEXT,
-    UNIQUE (id)
+    UNIQUE (id),
     PRIMARY KEY (id)
 );
 """
